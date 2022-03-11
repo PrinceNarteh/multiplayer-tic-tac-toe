@@ -1,0 +1,8 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for multiplayer tic-tac-toe game",
+  "main": "server.js",
+  "author": "Prince Narteh",
+  "license": "MIT"
+}
