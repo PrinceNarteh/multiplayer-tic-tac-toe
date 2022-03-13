@@ -1,4 +1,6 @@
 import './App.css';
+import styled from 'styled-components'
+import {io} from "socket.io-client"
 
 const AppContainer = styled.div`
   width: 100%;
@@ -13,7 +15,7 @@ function App() {
     const socket = io('http://localhost:4000');
 
     socket.on("connect", () => {
-      socket.emit('custom event', {name: "Prince", age: 20})
+      socket.emit('custom event', {name: "Prince", age: 20 })
     })
   }
   return (
