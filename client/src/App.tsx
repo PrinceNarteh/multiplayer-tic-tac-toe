@@ -1,14 +1,7 @@
-import './App.css';
-import styled from 'styled-components'
-import {io} from "socket.io-client"
+import { io } from "socket.io-client";
+import { AppContainer } from "./styles";
 
-const AppContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
+
 
 function App() {
   const connect = () => {
