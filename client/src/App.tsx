@@ -1,7 +1,6 @@
+import { useEffect } from "react";
 import { io } from "socket.io-client";
-import { AppContainer } from "./styles";
-
-
+import { AppContainer, WelcomeText } from "./styles";
 
 function App() {
   const connect = () => {
@@ -11,9 +10,14 @@ function App() {
       socket.emit('custom event', {name: "Prince", age: 20 })
     })
   }
+
+  useEffect(() => {
+    connect()
+  }, [])
+
   return (
     <AppContainer>
-      <h1>Let's Play Tic Tac Toe</h1>
+      <WelcomeText>Let's Play Tic Tac Toe</WelcomeText>
     </AppContainer>
   );
 }
