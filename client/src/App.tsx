@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { AppContainer, MainContainer, WelcomeText } from "./styles";
 import SocketService from "./services";
+import { JoinRoom } from "./components/JoinRoom";
 
 function App() {
   const connectSocket = async () => {
@@ -16,7 +17,9 @@ function App() {
   return (
     <AppContainer>
       <WelcomeText>Welcome To Tic-Tac-Toe</WelcomeText>
-      <MainContainer></MainContainer>
+      <MainContainer>
+        <JoinRoom />
+      </MainContainer>
     </AppContainer>
   );
 }
