@@ -1,10 +1,12 @@
 import React from "react";
+import { AppContainer, MainContainer, WelcomeText } from "./styles";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome To Tic Tac Toe</h1>
-    </div>
+    <AppContainer>
+      <WelcomeText>Welcome To Tic-Tac-Toe</WelcomeText>
+      <MainContainer></MainContainer>
+    </AppContainer>
   );
 }
 
