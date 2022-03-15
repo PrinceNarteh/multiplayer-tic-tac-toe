@@ -1,6 +1,7 @@
 import {
   ConnectedSocket,
   OnConnect,
+  OnDisconnect,
   SocketController,
   SocketIO,
 } from "socket-controllers";
@@ -9,7 +10,12 @@ import { Server, Socket } from "socket.io";
 @SocketController()
 export class MainController {
   @OnConnect()
-  onConnection(@ConnectedSocket() socket: Socket, @SocketIO() io: Server) {
-    console.log("New socket connected: ", socket.id);
+  connection(@ConnectedSocket() socket: Socket) {
+    console.log("New socket connected", socket.id);
+  }
+
+  @OnDisconnect()
+  disconnect(@ConnectedSocket() socket: any) {
+    console.log("client disconnected");
   }
 }

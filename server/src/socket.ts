@@ -1,14 +1,21 @@
+import path from "path";
 import { Server as HttpServer } from "http";
 import { useSocketServer } from "socket-controllers";
 import { Server } from "socket.io";
 import { corsOptions } from "./config/corsOptions";
 
-export default (httpServer: HttpServer) => {
+export const socketServer = (httpServer: HttpServer) => {
   const io = new Server(httpServer, {
     cors: corsOptions,
   });
 
-  useSocketServer(io, {
-    controllers: [__dirname + "controllers/*.ts"],
+  io.on("connection", (socket) => {
+    console.log("Client connected: ", socket.id);
   });
+
+  useSocketServer(io, {
+    controllers: [__dirname + "/controllers/*.ts"],
+  });
+
+  return io;
 };
