@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AppContainer, MainContainer, WelcomeText } from "./styles";
-import SocketService from "./services";
+import SocketService from "./services/socketService";
 import { JoinRoom } from "./components/JoinRoom";
 import GameContext, { IGameContextProps } from "./context/gameContext";
 

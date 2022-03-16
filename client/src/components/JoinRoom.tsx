@@ -1,8 +1,12 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useContext, useState } from "react";
+import gameContext from "../context/gameContext";
 import { JoinButton, JoinRoomContainer, RoomIDInput } from "../styles";
 
 export const JoinRoom = () => {
   const [roomName, setRoomName] = useState<string>("");
+
+  const { isInRoom, setIsInRoom } = useContext(gameContext);
+
   const handleRoomNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setRoomName(e.target.value);
   };
