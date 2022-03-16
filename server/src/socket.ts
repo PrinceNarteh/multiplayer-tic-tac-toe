@@ -1,4 +1,3 @@
-import path from "path";
 import { Server as HttpServer } from "http";
 import { useSocketServer } from "socket-controllers";
 import { Server } from "socket.io";
