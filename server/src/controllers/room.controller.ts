@@ -19,7 +19,7 @@ export class RoomController {
     @SocketIO() io: Server,
     @MessageBody() message: IMessage
   ) {
-    console.log(`New user joining room: ${message} `);
+    console.log(`New user joining room: ${message.roomId} `);
 
     const connectedSockets = io.sockets.adapter.rooms.get(message.roomId);
     const socketRooms = Array.from(socket.rooms.values()).filter(
