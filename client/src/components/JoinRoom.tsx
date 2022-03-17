@@ -40,7 +40,7 @@ export const JoinRoom = () => {
           onChange={handleRoomNameChange}
         />
         <JoinButton type="submit" disabled={isJoining || !roomName}>
-          {isJoining ? "Joining" : "Join"}
+          {isJoining ? "Joining..." : "Join"}
         </JoinButton>
       </JoinRoomContainer>
     </form>

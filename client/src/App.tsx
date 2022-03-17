@@ -3,6 +3,7 @@ import { AppContainer, MainContainer, WelcomeText } from "./styles";
 import SocketService from "./services/socketService";
 import { JoinRoom } from "./components/JoinRoom";
 import GameContext, { IGameContextProps } from "./context/gameContext";
+import { Game } from "./components/Game";
 
 function App() {
   const [isInRoom, setIsInRoom] = useState(false);
@@ -27,7 +28,8 @@ function App() {
       <AppContainer>
         <WelcomeText>Welcome To Tic-Tac-Toe</WelcomeText>
         <MainContainer>
-          <JoinRoom />
+          {!isInRoom && <JoinRoom />}
+          {isInRoom && <Game />}
         </MainContainer>
       </AppContainer>
     </GameContext.Provider>
