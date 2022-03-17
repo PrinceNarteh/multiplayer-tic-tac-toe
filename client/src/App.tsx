@@ -28,8 +28,9 @@ function App() {
       <AppContainer>
         <WelcomeText>Welcome To Tic-Tac-Toe</WelcomeText>
         <MainContainer>
-          {!isInRoom && <JoinRoom />}
-          {isInRoom && <Game />}
+          {/* {!isInRoom && <JoinRoom />}
+          {isInRoom && <Game />} */}
+          <Game />
         </MainContainer>
       </AppContainer>
     </GameContext.Provider>

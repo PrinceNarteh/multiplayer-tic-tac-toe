@@ -19,12 +19,12 @@ export const Game = () => {
       {matrix.map((row, rowIdx) => {
         return (
           <RowContainer>
-            {row.map((column, columnIdx) => {
+            {row.map((column, columnIdx) => (
               <Cell
                 borderRight={columnIdx < 2}
                 borderLeft={columnIdx > 0}
-                borderTop={rowIdx > 0}
                 borderBottom={rowIdx < 2}
+                borderTop={rowIdx > 0}
               >
                 {column && column !== "null" ? (
                   column === "x" ? (
@@ -33,8 +33,8 @@ export const Game = () => {
                     <O />
                   )
                 ) : null}
-              </Cell>;
-            })}
+              </Cell>
+            ))}
           </RowContainer>
         );
       })}
