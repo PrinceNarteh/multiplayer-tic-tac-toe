@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useGameContext } from "../context/gameContext";
 import { Cell, GameContainer, O, RowContainer, X } from "../styles";
 
 export type IPlayMatrix = Array<Array<string | null>>;
@@ -13,6 +14,16 @@ export const Game = () => {
     [null, null, null],
     [null, null, null],
   ]);
+  const { playerSymbol, setPlayerSymbol } = useGameContext();
+
+  const updateGameMatrix = (column: number, row: number, symbol: "x" | "o") => {
+    const newMatrix = [...matrix];
+
+    if (newMatrix[row][column] === null || newMatrix[row][column] === "null") {
+      newMatrix[row][column] = symbol;
+      setMatrix(newMatrix);
+    }
+  };
 
   return (
     <GameContainer>

@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useContext, useState } from "react";
-import gameContext from "../context/gameContext";
+import React, { ChangeEvent, useState } from "react";
+import { useGameContext } from "../context/gameContext";
 import gameService from "../services/gameService";
 import socketService from "../services/socketService";
 import { JoinButton, JoinRoomContainer, RoomIDInput } from "../styles";
@@ -7,7 +7,7 @@ import { JoinButton, JoinRoomContainer, RoomIDInput } from "../styles";
 export const JoinRoom = () => {
   const [roomName, setRoomName] = useState<string>("");
   const [isJoining, setIsJoining] = useState(false);
-  const { isInRoom, setIsInRoom } = useContext(gameContext);
+  const { isInRoom, setIsInRoom } = useGameContext();
 
   const handleRoomNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setRoomName(e.target.value);
