@@ -36,6 +36,9 @@ export const Game = () => {
                 borderLeft={columnIdx > 0}
                 borderBottom={rowIdx < 2}
                 borderTop={rowIdx > 0}
+                onClick={() =>
+                  updateGameMatrix(columnIdx, rowIdx, playerSymbol)
+                }
               >
                 {column && column !== "null" ? (
                   column === "x" ? (
